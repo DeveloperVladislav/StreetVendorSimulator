@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -32,6 +33,17 @@ namespace StreetVendorSimulator
 		/// Уменьшение количества продукта.
 		/// </summary>
 		/// <param name="amount">Еденица.</param>
+		/// 
+
+		public Product(string name, decimal price, int quantity, bool isSpoiled)
+		{
+			Name = name;
+			Price = price;
+			Quantity = quantity;
+			IsSpoiled = isSpoiled;
+		}
+
+
 		public bool DecreaseQuantity(int amount)
 		{
 			if (Quantity < amount)

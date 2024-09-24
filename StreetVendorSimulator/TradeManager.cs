@@ -14,7 +14,7 @@ namespace StreetVendorSimulator
 		public Warehouse? Warehouse { get; set; }
 
 		/// <summary>
-		///  Текущая  прибыль  продавца
+		///  Текущая  прибыль  продавца.
 		/// </summary>
 		public decimal CurrentProfit { get; set; }
 

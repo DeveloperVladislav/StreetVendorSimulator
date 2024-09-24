@@ -11,7 +11,7 @@ namespace StreetVendorSimulator
 		/// <summary>
 		/// Список продуктов, хранящихся на складе. 
 		/// </summary>
-		public List<Product> Products { get; set; }
+		public List<Product>? Products { get; set; }
 
 		/// <summary>
 		/// Добавление на склад продуктов. 

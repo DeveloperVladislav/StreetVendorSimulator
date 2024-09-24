@@ -16,33 +16,37 @@ namespace StreetVendorSimulator
 		/// <summary>
 		/// Генерация  случайной  цены  для  продукта.
 		/// </summary>
-		public void GenerateRandomPrice()
+		public decimal GenerateRandomPrice()
 		{
-			throw new NotImplementedException();
+			decimal randomPrice = (decimal)Random.NextDouble() * 10;
+			return Math.Round(randomPrice, 2);
 		}
 
 		/// <summary>
-		/// Генерация  случайного бюджета  для  покупателя.
+		/// Генерация  случайного бюджета  для  покупателя. 
 		/// </summary>
-		public void GenerateRandomCustomerBudget()
+		public int GenerateRandomCustomerBudget()
 		{
-			throw new NotImplementedException();
+			int randomBudget = Random.Next(1000);
+			return randomBudget;
 		}
 
 		/// <summary>
 		/// Генерация  случайного  количества  продукта  на  складе. 
 		/// </summary>
-		public void GenerateRandomProductQuantity()
+		public int GenerateRandomProductQuantity()
 		{
-			throw new NotImplementedException();
+			int randomQuantity = Random.Next(100);
+			return randomQuantity;
 		}
 
 		/// <summary>
 		/// Генерирация  случайного  шанса,  что  продукт  испорчен  (например,  вероятность  10%).
 		/// </summary>
-		public void GenerateRandomProductSpoilage()
+		public bool GenerateRandomProductSpoilage()
 		{
-			throw new NotImplementedException();
+			int randomProductSpoilage = Random.Next(100);
+			return randomProductSpoilage < 10;
 		}
 	}
 }

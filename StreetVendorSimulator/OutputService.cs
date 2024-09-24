@@ -14,7 +14,8 @@ namespace StreetVendorSimulator
 		/// <param name="product">Продукт.</param>
 		public void DisplayProductInfo(Product product)
 		{
-			throw new NotImplementedException();
+			Console.WriteLine("-ProductInfo-");
+			Console.WriteLine($"Name - {product.Name}\nPrice - {product.Price}\nQuantity - {product.Quantity}\nIsSpoiled - {product.IsSpoiled}");
 		}
 
 		/// <summary>
@@ -23,7 +24,12 @@ namespace StreetVendorSimulator
 		/// <param name="product">Продукт.</param>
 		public void DisplayCustomerInfo(Customer customer)
 		{
-			throw new NotImplementedException();
+			Console.WriteLine("-CustomerInfo-");
+			Console.WriteLine($"Money = {customer.Money}\nListProducts:");
+			foreach(var list in customer.ShoppingList)
+			{
+				Console.WriteLine($"- {list}");
+			}
 		}
 
 		/// <summary>
@@ -32,16 +38,18 @@ namespace StreetVendorSimulator
 		/// <param name="product">Склад.</param>
 		public void DisplayWarehouseInfo(Warehouse warehouse)
 		{
-			throw new NotImplementedException();
+			Console.WriteLine("-WarehouseInfo-");
+			Console.WriteLine($"Products - {warehouse.Products}");
 		}
 
 		/// <summary>
 		/// Вывод  в  консоль  текущую  прибыль  продавца.
 		/// </summary>
 		/// <param name="product">Продавец.</param>
-		public void DisplayProfit(TradeManager tradeManager)
+		public void DisplayProfitInfo(TradeManager tradeManager)
 		{
-			throw new NotImplementedException();
+			Console.WriteLine("-ProfitInfo-");
+			Console.WriteLine($"CurrentProfit - {tradeManager.CurrentProfit}");
 		}
 	}
 }

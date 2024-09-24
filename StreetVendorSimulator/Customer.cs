@@ -18,6 +18,13 @@ namespace StreetVendorSimulator
 		/// </summary>
 		public List<string>? ShoppingList { get; set; }
 
+		public Customer(int money, List<string> shoppingsList)
+		{
+			Money = money;
+			ShoppingList = shoppingsList;
+		}
+
+
 		/// <summary>
 		/// Покупка продуктов.
 		/// </summary>
