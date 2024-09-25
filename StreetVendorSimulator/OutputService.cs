@@ -24,7 +24,7 @@ namespace StreetVendorSimulator
 		/// <param name="product">Продукт.</param>
 		public void DisplayCustomerInfo(Customer customer)
 		{
-			Console.WriteLine("-CustomerInfo-");
+			Console.WriteLine($"-----------------CustomerInfo-----------------\n----------------------------------------------");
 			Console.WriteLine($"Money = {customer.Money}\nListProducts:");
 			foreach(var list in customer.ShoppingList)
 			{
@@ -38,8 +38,13 @@ namespace StreetVendorSimulator
 		/// <param name="product">Склад.</param>
 		public void DisplayWarehouseInfo(Warehouse warehouse)
 		{
-			Console.WriteLine("-WarehouseInfo-");
-			Console.WriteLine($"Products - {warehouse.Products}");
+			Console.WriteLine($"-----------------WarehouseInfo-----------------\n-----------------------------------------------\n");
+
+			foreach (var list in warehouse.Products)
+			{
+				DisplayProductInfo(list);
+				Console.WriteLine();
+			}
 		}
 
 		/// <summary>
@@ -48,8 +53,20 @@ namespace StreetVendorSimulator
 		/// <param name="product">Продавец.</param>
 		public void DisplayProfitInfo(TradeManager tradeManager)
 		{
-			Console.WriteLine("-ProfitInfo-");
+			Console.WriteLine($"-----------------ProfitInfo-----------------\n--------------------------------------------");
 			Console.WriteLine($"CurrentProfit - {tradeManager.CurrentProfit}");
+		}
+
+
+		/// <summary>
+		/// Вывод на консоль купленных продуктов и их количества.
+		/// </summary>
+		/// <param name="product">Продукт.</param>
+		/// <param name="quantity">Количество.</param>
+		public void BuyProductInfo(Product product, int quantity)
+		{
+			Console.WriteLine($"-----------------BuyProductInfo-----------------\n------------------------------------------------");
+			Console.WriteLine($"Name - {product.Name}\nQuantity = {quantity}");
 		}
 	}
 }

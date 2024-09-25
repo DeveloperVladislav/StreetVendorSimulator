@@ -6,8 +6,10 @@ namespace StreetVendorSimulator
 	{
 		static void Main(string[] args)
 		{
+			Random random = new Random();
 			RandomService randomService = new RandomService();
 			OutputService outputService = new OutputService();
+			TradeManager tradeManager = new TradeManager();
 
 			List<Product> products = new List<Product>()
 			{
@@ -18,36 +20,26 @@ namespace StreetVendorSimulator
 				new Product("Tomato",randomService.GenerateRandomPrice(), randomService.GenerateRandomProductQuantity(), randomService.GenerateRandomProductSpoilage()),
 				new Product("Potato",randomService.GenerateRandomPrice(),randomService.GenerateRandomProductQuantity(),randomService.GenerateRandomProductSpoilage())
 			};
-			Warehouse warehouse = new Warehouse()
-			{
 
-			};
-			TradeManager tradeManager = new TradeManager();
+			Warehouse warehouse = new Warehouse(products);
+			outputService.DisplayWarehouseInfo(warehouse);
 
-			List<string> shoppingList = new List<string>();
+			Customer customer = new Customer(randomService.GenerateRandomCustomerBudget());
+			customer.GenerateRandomShoppingList();
+			outputService.DisplayCustomerInfo(customer);
+			int choiceProduct = random.Next(0, 5);
+			int choiceQuantity = random.Next(1, randomService.GenerateRandomProductQuantity());
+			customer.BuyProduct(products[choiceProduct], choiceQuantity);
+			outputService.BuyProductInfo(products[choiceProduct], choiceQuantity);
 
-			Console.WriteLine("Введите продукты (введите 'стоп' для завершения):");
-			string? product = "";
-			while (product != "стоп")
-			{
-				product = Console.ReadLine();
-				if (product != "стоп")
-				{
-					shoppingList.Add(product);
-				}
-			}
+			outputService.DisplayWarehouseInfo(warehouse);
 
-			Customer customer = new Customer(randomService.GenerateRandomCustomerBudget(), shoppingList);	
-			
-			foreach(var list in products)
-			{
-				outputService.DisplayProductInfo(list);
-				Console.WriteLine();
-			}
-			
+
+
+
+
 			Console.WriteLine();
 
-			outputService.DisplayCustomerInfo(customer);
 		
 
 		

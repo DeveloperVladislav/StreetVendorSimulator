@@ -36,7 +36,7 @@ namespace StreetVendorSimulator
 		/// </summary>
 		public int GenerateRandomProductQuantity()
 		{
-			int randomQuantity = Random.Next(100);
+			int randomQuantity = Random.Next(1,100);
 			return randomQuantity;
 		}
 
@@ -48,5 +48,8 @@ namespace StreetVendorSimulator
 			int randomProductSpoilage = Random.Next(100);
 			return randomProductSpoilage < 10;
 		}
+
+
+		
 	}
 }

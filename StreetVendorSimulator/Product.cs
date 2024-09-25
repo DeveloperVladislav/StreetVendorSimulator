@@ -34,7 +34,12 @@ namespace StreetVendorSimulator
 		/// </summary>
 		/// <param name="amount">Еденица.</param>
 		/// 
-
+		public Product(string name, decimal price, int quantity)
+		{
+			Name = name;
+			Price = price;
+			Quantity = quantity;
+		}
 		public Product(string name, decimal price, int quantity, bool isSpoiled)
 		{
 			Name = name;
@@ -44,6 +49,11 @@ namespace StreetVendorSimulator
 		}
 
 
+		/// <summary>
+		/// Уменьшение количества продукта.
+		/// </summary>
+		/// <param name="amount"></param>
+		/// <returns></returns>
 		public bool DecreaseQuantity(int amount)
 		{
 			if (Quantity < amount)

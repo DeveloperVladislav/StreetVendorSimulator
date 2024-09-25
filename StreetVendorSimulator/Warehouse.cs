@@ -18,6 +18,19 @@ namespace StreetVendorSimulator
 		/// </summary>
 		/// <param name="product">Еденица продукта.</param>
 		/// <param name="quantity">Количество продуктов.</param>
+		/// 
+
+		
+		public Warehouse(List<Product>? products)
+		{
+			Products = products;
+		}
+
+		/// <summary>
+		/// Добавление на склад продуктов. 
+		/// </summary>
+		/// <param name="product">Продукт.</param>
+		/// <param name="quantity">Количесвто продуктов.</param>
 		public void Restock(Product product, int quantity)
 		{
 			throw new NotImplementedException();
